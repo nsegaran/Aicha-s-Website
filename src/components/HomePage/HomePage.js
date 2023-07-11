@@ -1,7 +1,5 @@
 
 import HomeBackground from "../../images/HomeBackground.png";
-import hp1 from "../../images/hp1.png"
-import hp2 from "../../images/hp2.png"
 import hp3 from "../../images/hp3.png"
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
@@ -31,13 +29,9 @@ return (
         <Box style={styles.hpinfoflex}>
           <Box>
             <Typography style={styles.hpinfoflextitle}>ENTREPRENEUR</Typography>
-            <img src={hp1} alt="hp1" style={{padding: "10px"}}></img>
-            <Typography style={styles.hpinfoflextext}>Aicha founded her own international goods business selling African jewelery to help support local businesswomen and traditions. </Typography>
-          </Box>
-          <Box>
-            <Typography style={styles.hpinfoflextitle}>SPEAKER</Typography>
-            <img src={hp2} alt="hp2" style={{padding: "10px"}}></img>
-            <Typography style={styles.hpinfoflextext}>Aicha has been an honored speaker of multiple charity galas, raising over 1 million for the Tahirih Justice Center alone. She is passionate about promoting self-love, women empowerment, and solidarity against sexual violence. </Typography>
+
+
+            <Typography style={styles.hpinfoflextext}>As a speaker for the Tahirih Justice Center, as well as the 2018 and 2019 Orange County Galas, Aicha has raised over 1 million dollars. She is passionate about promoting self-love, women empowerment, and solidarity against sexual violence. </Typography>
           </Box>
           <Box>
             <Typography style={styles.hpinfoflextitle}>ADVOCATE</Typography>
