@@ -1,23 +1,67 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import TopBar from "./components/TopBar/TopBar.js";
+import HomePage from "./components/HomePage/HomePage.js";
+import AboutPage from "./components/AboutPage/AboutPage.js";
+import ConnectPage from "./components/ConnectPage/ConnectPage.js";
+import MediaPage from "./components/MediaPage/MediaPage.js";
+import BottomBar from "./components/BottomBar/BottomBar.js";
+import Box from "@mui/material/Box";
+import { HashRouter, Route, Switch} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      style={{
+        position: "absolute",
+        overflow: "auto",
+        width: "100%",
+        height: "100vh",
+      }}
+    >
+      <HashRouter>
+        <Switch>
+          <Route path="/about"  render={(props) => (
+              <div>
+                <TopBar />
+                <AboutPage />
+              </div>
+            )}/>
+          <Route path="/media"  render={(props) => (
+              <div>
+                <TopBar />
+                <MediaPage />
+              </div>
+            )} />
+          <Route
+            path="/connect"
+            render={(props) => (
+              <div>
+                <TopBar />
+                <ConnectPage />
+              </div>
+            )}
+          />
+          <Route
+            path="/"
+            render={(props) => (
+              <div>
+                <TopBar />
+                <Box
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    bottom: 0,
+                    width: "100%",
+                  }}
+                >
+                  <HomePage></HomePage>
+                </Box>
+              </div>
+            )}
+          />
+        </Switch>
+      </HashRouter>
+      <BottomBar />
     </div>
   );
 }
