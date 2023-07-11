@@ -15,7 +15,7 @@ export default function BottomBar({ onPageChange, selectedPage }) {
   };
 
   const handleClickTikTok = () => {
-    window.open("https://www.facebook.com/aicha.abdoulaye.31?mibextid=LQQJ4d", "_blank");
+    window.open("https://www.tiktok.com/@aichaabdoulaye2014", "_blank");
   };
 
   const handleClickFacebook = () => {

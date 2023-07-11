@@ -33,12 +33,6 @@ function ConnectPage() {
           <Typography style={styles.cptext}>
           @aichaabodulaye2014
           </Typography>
-          <Typography style={styles.cptextbold}>
-          Twitter:
-          </Typography>
-          <Typography style={styles.cptext}>
-          _____________
-          </Typography>
         </Box>
         <ContactForm/>
       </Box>
