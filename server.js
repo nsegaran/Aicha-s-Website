@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
   });
 
 // Define an endpoint to handle the form submission
-app.post('/send-email', (req, res) => {
+app.post('/send-emails', (req, res) => {
   const { email, name, message } = req.body;
 
   // Set up a nodemailer transport for sending the email
@@ -21,15 +21,15 @@ app.post('/send-email', (req, res) => {
     // Configure your email service provider here
     service: 'Gmail',
     auth: {
-      user: 'abdoulayeachia@gmail.com',
-      pass: 'nyehqsgmjxeuasyr',
+      user: 'nsegaran2@gmail.com',
+      pass: 'suyimkyqiqpaqdce',
     },
   });
 
   // Set up the email content
   const mailOptions = {
     from: email,
-    to: 'abdoulayeachia@gmail.com',
+    to: 'nsegaran2@gmail.com',
     subject: 'New contact form submission',
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };

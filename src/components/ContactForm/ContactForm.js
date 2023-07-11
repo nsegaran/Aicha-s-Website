@@ -12,7 +12,7 @@ const ContactForm = () => {
 
     // Send form data to the server
     const formData = { email, name, message };
-    fetch('http://localhost:3001/send-email', {
+    fetch('https://aichaswebsite-6bfcad5836f9.herokuapp.com/send-emails', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
