@@ -20,6 +20,10 @@ const ContactForm = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data); // Handle response from server
+        setEmail('');
+        setName('');
+        setMessage('');
+        alert("Your message has been sent!")
       });
   };
 

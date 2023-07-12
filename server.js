@@ -21,15 +21,15 @@ app.post('/send-emails', (req, res) => {
     // Configure your email service provider here
     service: 'Gmail',
     auth: {
-      user: 'nsegaran2@gmail.com',
-      pass: 'suyimkyqiqpaqdce',
+      user: 'abdoulayeachia@gmail.com',
+      pass: 'nyehqsgmjxeuasyr',
     },
   });
 
   // Set up the email content
   const mailOptions = {
     from: email,
-    to: 'nsegaran2@gmail.com',
+    to: 'abdoulayeachia@gmail.com.com',
     subject: 'New contact form submission',
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
