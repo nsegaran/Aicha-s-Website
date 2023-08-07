@@ -6,6 +6,7 @@ import ConnectPage from "./components/ConnectPage/ConnectPage.js";
 import MediaPage from "./components/MediaPage/MediaPage.js";
 import BottomBar from "./components/BottomBar/BottomBar.js";
 import Box from "@mui/material/Box";
+import { Analytics } from '@vercel/analytics/react';
 import { HashRouter, Route, Switch} from "react-router-dom";
 
 function App() {
