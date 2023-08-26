@@ -63,6 +63,7 @@ const styles = {
   logo: {
     fontFamily: "BonheurRoyale",
     display: "inline",
+    whiteSpace: "nowrap",
     fontSize: 50,
     zIndex: 2,
   },

@@ -85,6 +85,7 @@ const styles = {
     fontSize: "50px",
     color: "#FFFFFF",
     fontFamily: "Didot",
+    whiteSpace: "nowrap",
   },
   hpinfo: {
     minHeight: "100vh", // Set the height of the box to 100% viewport height
