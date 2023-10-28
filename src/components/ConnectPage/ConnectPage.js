@@ -11,7 +11,7 @@ function ConnectPage() {
     <Box sx={{ overflow: "scroll"}}>
      <Typography style={styles.cptitle}>LET'S GET CONNECTED</Typography>
       <Box
-        style={{ display: "flex", justifyContent: "space-between", marginTop: "10%", marginRight: "10%", marginLeft: "10%", flexDirection: isSmallScreen ? "column" : "row"}}
+        style={{ display: "flex", justifyContent: "space-between", marginTop: "5%", marginRight: "10%", marginLeft: "10%", flexDirection: isSmallScreen ? "column" : "row"}}
       >
         <Box style={{width: isSmallScreen ? "100%" : "40%"}}>
           <Typography style={styles.cptext}>
@@ -48,7 +48,7 @@ const styles = {
     fontSize: 50,
     color: "#393839",
     textAlign: "center",
-    marginTop: "10%",
+    marginTop: "5%",
   },
   cptext: {
     fontFamily: "Gill Sans",

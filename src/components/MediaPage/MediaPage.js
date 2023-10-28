@@ -46,7 +46,6 @@ function MediaPage() {
         </Box>
       <Box
         style={{
-          marginTop: "5%",
           marginRight: "10%",
           marginLeft: "10%",
           marginBottom: "5%",
