@@ -2,16 +2,18 @@
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import "./ConnectPage.css";
-import ContactForm from "../ContactForm/ContactForm.js"
+import ContactForm from "../ContactForm/ContactForm.js";
+import { useMediaQuery } from '@mui/material';
 
 function ConnectPage() {
+  const isSmallScreen = useMediaQuery('(max-width: 768px)');
   return (
     <Box sx={{ overflow: "scroll"}}>
      <Typography style={styles.cptitle}>LET'S GET CONNECTED</Typography>
       <Box
-        style={{ display: "flex", justifyContent: "space-between", marginTop: "50px", marginRight: "100px", marginLeft: "100px"}}
+        style={{ display: "flex", justifyContent: "space-between", marginTop: "10%", marginRight: "10%", marginLeft: "10%", flexDirection: isSmallScreen ? "column" : "row"}}
       >
-        <Box style={{width: "40%"}}>
+        <Box style={{width: isSmallScreen ? "100%" : "40%"}}>
           <Typography style={styles.cptext}>
           I’m always interested in connecting with new people to support one another, book a speaking event, collaborate, and more!
           </Typography>
@@ -46,12 +48,12 @@ const styles = {
     fontSize: 50,
     color: "#393839",
     textAlign: "center",
-    marginTop: 40,
+    marginTop: "10%",
   },
   cptext: {
     fontFamily: "Gill Sans",
     fontSize: 20,
-    marginBottom: 20,
+    marginBottom: "5%",
   },
   cptextbold: {
     fontFamily: "Gill Sans",

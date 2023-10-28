@@ -3,27 +3,29 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import { BrowserRouter as Router} from "react-router-dom";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import { BrowserRouter as Router } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import "./TopBar.css";
+import { useMediaQuery } from "@mui/material";
 
 export default function TopBar() {
   const history = useHistory();
+  const isSmallScreen = useMediaQuery("(max-width:768px)");
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
 
-  const handleClickHome = () => {
-    history.push("/");
+  const handleClick = (path) => {
+    history.push(path);
+    if (isSmallScreen) {
+      setDrawerOpen(false); // Close the drawer after a menu item is clicked
+    }
   };
 
-  const handleClickAbout = () => {
-    history.push("/about");
-  };
-
-  const handleClickMedia = () => {
-    history.push("/media");
-  };
-
-  const handleClickConnect = () => {
-    history.push("/connect");
+  const handleDrawerToggle = () => {
+    setDrawerOpen(!drawerOpen);
   };
 
   return (
@@ -32,28 +34,95 @@ export default function TopBar() {
         <AppBar position="static" sx={{ backgroundColor: "#EF72B0" }}>
           <Toolbar>
             <Typography style={styles.logo}>Aicha Abdoulaye</Typography>
-            <Box
-              sx={{
-                marginLeft: "auto",
-                display: "flex",
-                justifyContent: "space-between",
-              }}
-            >
-              <Typography style={styles.pagetitle} onClick={handleClickHome}>
-                HOME
-              </Typography>
-              <Typography  style={styles.pagetitle} onClick={handleClickAbout}>
-                ABOUT AICHA
-              </Typography>
-              <Typography style={styles.pagetitle} onClick={handleClickMedia}>
-                MEDIA
-              </Typography>
-              <Typography style={styles.pagetitle} onClick={handleClickConnect}>
-                CONNECT
-              </Typography>
-            </Box>
+            {isSmallScreen ? (
+              <IconButton
+                sx={{
+                  display: "block",
+                  color: "white",
+                  zIndex: "2",
+                  marginLeft: "auto",
+                }}
+                edge="end"
+                onClick={handleDrawerToggle}
+              >
+                <MenuIcon />
+              </IconButton>
+            ) : (
+              <Box
+                sx={{
+                  marginLeft: "auto",
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Typography
+                  style={styles.pagetitle}
+                  onClick={() => handleClick("/")}
+                >
+                  HOME
+                </Typography>
+                <Typography
+                  style={styles.pagetitle}
+                  onClick={() => handleClick("/about")}
+                >
+                  ABOUT AICHA
+                </Typography>
+                <Typography
+                  style={styles.pagetitle}
+                  onClick={() => handleClick("/media")}
+                >
+                  MEDIA
+                </Typography>
+                <Typography
+                  style={styles.pagetitle}
+                  onClick={() => handleClick("/connect")}
+                >
+                  CONNECT
+                </Typography>
+              </Box>
+            )}
           </Toolbar>
         </AppBar>
+        <Drawer
+          anchor="top"
+          open={drawerOpen}
+          onClose={() => setDrawerOpen(false)}
+        >
+          <List sx={{ backgroundColor: "#EF72B0" }}>
+            <ListItem>
+              <Typography
+                style={styles.pagetitle}
+                onClick={() => handleClick("/")}
+              >
+                HOME
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography
+                style={styles.pagetitle}
+                onClick={() => handleClick("/about")}
+              >
+                ABOUT AICHA
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography
+                style={styles.pagetitle}
+                onClick={() => handleClick("/media")}
+              >
+                MEDIA
+              </Typography>
+            </ListItem>
+            <ListItem>
+              <Typography
+                style={styles.pagetitle}
+                onClick={() => handleClick("/connect")}
+              >
+                CONNECT
+              </Typography>
+            </ListItem>
+          </List>
+        </Drawer>
       </Box>
     </Router>
   );
@@ -73,8 +142,9 @@ const styles = {
     flex: 1,
     fontSize: 22,
     padding: "0 20px", // Add padding for extra spacing
-    whiteSpace: "nowrap", //prevent about aicha from wrapping
+    whiteSpace: "nowrap", // Prevent "About Aicha" from wrapping
     zIndex: 2,
     cursor: "pointer",
+    color: "white",
   },
 };
